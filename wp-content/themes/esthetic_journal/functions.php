@@ -259,6 +259,7 @@ function twentyfifteen_scripts() {
 
 	wp_enqueue_script( 'twentyfifteen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20141010', true );
 
+	wp_enqueue_script( 'esthetic_journal_map', 'https://maps.googleapis.com/maps/api/js?sensor=false', array(), '', true );
 	wp_enqueue_script( 'esthetic_journal_plugins', get_template_directory_uri() . '/js/plugins.js', array(), '20141010', true );
 	wp_enqueue_script( 'esthetic_journal_alpha', get_template_directory_uri() . '/js/alpha.js', array(), '20141010', true );
 

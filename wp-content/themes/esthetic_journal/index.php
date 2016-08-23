@@ -187,7 +187,7 @@ get_header(); ?>
 	</section>
 
 	<section class="row section">
-		<div class="map" data-maplat="49.445773" data-maplon="32.062016" data-mapzoom="17" data-color="" data-height="22.222" data-img="img/marker.png" data-info="Мы находимся в Черкассах"></div>
+		<div class="map" data-maplat="49.445773" data-maplon="32.062016" data-mapzoom="17" data-color="" data-height="22.222" data-img="<?php echo get_template_directory_uri(); ?>/img/marker.png" data-info="Мы находимся в Черкассах"></div>
 	</section>
 
 </div><!-- id-main -->
