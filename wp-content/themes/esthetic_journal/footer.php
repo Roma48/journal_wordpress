@@ -27,7 +27,45 @@
 <!--	</footer><!-- .site-footer -->
 <!---->
 <!--</div><!-- .site -->
-
+<footer role="contentinfo">
+    <div class="row">
+        <div class="row-content buffer clear-after">
+            <section id="top-footer">
+                <div class="widget column three"><!-- widget-->
+                    <h4>Меню</h4>
+                    <ul class="plain">
+                        <li><a href="#">Головна</a></li>
+                        <li><a href="#">Новини</a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="widget column three">
+                    <h4>Архіви</h4>
+                    <ul class="plain">
+                        <li><a href="#">2016</a></li>
+                        <li><a href="#">2016</a></li>
+                        <li><a href="#">2016</a></li>
+                        <li><a href="#">2016</a></li>
+                        <li><a href="#">2016</a></li>
+                    </ul>
+                </div>
+                <div class="widget meta-social column three">
+                    <h4>Слідкуйте за нами</h4>
+                    <ul class="inline">
+                        <li><a href="#" class="twitter-share border-box"><i class="fa fa-twitter fa-lg"></i></a></li>
+                        <li><a href="#" class="facebook-share border-box"><i class="fa fa-facebook fa-lg"></i></a></li>
+                        <li><a href="#" class="vk-share border-box"><i class="fa fa-vk fa-lg"></i></a></li>
+                    </ul>
+                </div>
+            </section><!-- top-footer -->
+            <section id="bottom-footer">
+                <p class="keep-left">&copy; 2016 <a href="http://vk.com/awaylastdays" alt="AwayLastDays">AwayLastDays</a>. All Rights Reserved.</p>
+            </section><!-- bottom-footer -->
+        </div><!-- row-content -->
+    </div><!-- row -->
+</footer>
 <?php wp_footer(); ?>
 
 </body>

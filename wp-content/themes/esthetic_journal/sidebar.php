@@ -8,40 +8,28 @@
  */
 
 if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) || is_active_sidebar( 'sidebar-1' )  ) : ?>
-	<div id="secondary" class="secondary">
-
-		<?php if ( has_nav_menu( 'primary' ) ) : ?>
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<?php
-					// Primary navigation menu.
-					wp_nav_menu( array(
-						'menu_class'     => 'nav-menu',
-						'theme_location' => 'primary',
-					) );
-				?>
-			</nav><!-- .main-navigation -->
-		<?php endif; ?>
-
-		<?php if ( has_nav_menu( 'social' ) ) : ?>
-			<nav id="social-navigation" class="social-navigation" role="navigation">
-				<?php
-					// Social links navigation menu.
-					wp_nav_menu( array(
-						'theme_location' => 'social',
-						'depth'          => 1,
-						'link_before'    => '<span class="screen-reader-text">',
-						'link_after'     => '</span>',
-					) );
-				?>
-			</nav><!-- .social-navigation -->
-		<?php endif; ?>
-
-		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-			<div id="widget-area" class="widget-area" role="complementary">
-				<?php dynamic_sidebar( 'sidebar-1' ); ?>
-			</div><!-- .widget-area -->
-		<?php endif; ?>
-
-	</div><!-- .secondary -->
+	<aside role="complementary" class="sidebar column three last">
+		<div class="widget widget_search">
+			<form role="search">
+				<span class="pre-input"><i class="icon icon-search"></i></span>
+				<input type="text" placeholder="Поиск" value="" class="plain buffer">
+			</form>
+		</div>
+		<div class="widget">
+			<h4>Не знаю возможно тут будет реклама</h4>
+			<div class="textwidget">
+				Реклама - это не всегда плохо, порой ты видишь хорошие вещи, которые давно хотел, но не находил, а порой лучше бы не видеть эту рекламу. Но все же лучше реклама в интернете, чем тупые банеры, которые висят по всему городу.
+			</div><!-- la class="textwidget" è forse generata automaticamente da wp -->
+		</div>
+		<div class="widget">
+			<h4>Рубрики</h4>
+			<ul class="plain">
+				<li><a href="#">Мода</a></li>
+				<li><a href="#">Люди</a></li>
+				<li><a href="#">Город</a></li>
+				<li><a href="#">Мир</a></li>
+			</ul>
+		</div>
+	</aside>
 
 <?php endif; ?>

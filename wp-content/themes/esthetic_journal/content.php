@@ -9,7 +9,9 @@
  * @since Twenty Fifteen 1.0
  */
 ?>
-
+<?php
+	echo $i;
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		// Post thumbnail.
