@@ -21,8 +21,11 @@
 	<?php wp_head(); ?>
 	<link href='http://fonts.googleapis.com/css?family=Proxi:400,700|Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
 </head>
-
+<?php if (is_archive()) : ?>
+<body <?php body_class('blog masonry-style'); ?>>
+<?php else : ?>
 <body <?php body_class(); ?>>
+<?php endif; ?>
 	<header role="banner" class="transparent light">
 		<div class="row">
 			<div class="nav-inner row-content buffer-left buffer-right even clear-after">

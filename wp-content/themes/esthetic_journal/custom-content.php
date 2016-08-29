@@ -12,7 +12,7 @@
 
 <?php if (is_single()) : ?>
 	<article role="main" class="column nine">
-		<h5 class="meta-post"><a href="#">Раздел</a>, <a href="#">Подтема</a> - <time datetime="2013-11-09">Февраль 18, 2016</time></h5>
+		<h5 class="meta-post"><?php the_category(); ?> - <time datetime="<?php the_date(); ?>"><?php the_date(); ?></time></h5>
 		<h1><?php the_title(); ?></h1>
 		<p><?php the_content(); ?></p>
 	</article>
@@ -39,7 +39,7 @@
 					<span class="blog-overlay"><i class="icon icon-doc"></i></span></figure>
 				<div class="blog-excerpt">
 					<div class="blog-excerpt-inner">
-						<h5 class="meta-post">Люди</h5>
+						<h5 class="meta-post"><?php echo get_the_category($post->ID)[0]->name; ?></h5>
 						<?php
 						the_title( '<h2 class="entry-title">', '</h2>' );
 						if ($class != 'six'){

@@ -5186,3 +5186,12 @@ footer .row-content.buffer {
         -webkit-text-size-adjust: none;
     }
 }
+
+.widget_search input[type=search] {
+    padding: 5px 1.077em;
+}
+
+.widget_search input[type=submit] {
+    padding: 5px 0;
+}
+
