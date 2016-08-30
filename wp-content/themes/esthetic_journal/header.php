@@ -23,6 +23,8 @@
 </head>
 <?php if (is_archive()) : ?>
 <body <?php body_class('blog masonry-style'); ?>>
+<?php elseif (is_search()) : ?>
+<body <?php body_class('search list-style'); ?>>
 <?php else : ?>
 <body <?php body_class(); ?>>
 <?php endif; ?>

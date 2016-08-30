@@ -9,45 +9,50 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<main role="main">
 
-		<?php if ( have_posts() ) : ?>
+	<div id="main" class="row">
+		<div class="row-content buffer-left buffer-right buffer-bottom clear-after">
+			<div class="column nine">
+				<?php if ( have_posts() ) : ?>
+					<div class="search-results">
+						<h4><?php printf( __( 'Search Results for: %s', 'twentyfifteen' ), get_search_query() ); ?></h4>
+					</div>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyfifteen' ), get_search_query() ); ?></h1>
-			</header><!-- .page-header -->
+					<?php
+					// Start the loop.
+					while ( have_posts() ) : the_post(); ?>
 
-			<?php
-			// Start the loop.
-			while ( have_posts() ) : the_post(); ?>
+						<?php
+						/*
+                         * Run the loop for the search to output the results.
+                         * If you want to overload this in a child theme then include a file
+                         * called content-search.php and that will be used instead.
+                         */
+						get_template_part( 'search-content', 'search' );
 
-				<?php
-				/*
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'content', 'search' );
+						// End the loop.
+					endwhile;
 
-			// End the loop.
-			endwhile;
+					// Previous/next page navigation.
+					the_posts_pagination( array(
+						'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
+						'next_text'          => __( 'Next page', 'twentyfifteen' ),
+						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
+					) );
 
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-				'next_text'          => __( 'Next page', 'twentyfifteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
-			) );
+				// If no content, include the "No posts found" template.
+				else :
+					get_template_part( 'search-content', 'none' );
 
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'content', 'none' );
+				endif;
+				?>
+			</div><!-- column nine -->
 
-		endif;
-		?>
+			<?php get_template_part('sidebar'); ?>
 
-		</main><!-- .site-main -->
-	</section><!-- .content-area -->
+		</div><!-- row-content -->
+	</div><!-- row -->
+</main><!-- main -->
 
 <?php get_footer(); ?>

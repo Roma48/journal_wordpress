@@ -21,14 +21,11 @@ get_header(); ?>
 <main role="main">
 	<div id="intro-wrap" data-height="27.778">
 		<div id="intro" class="preload darken">
-			<div class="intro-item" style="background-image: url(img/vsco_031315.jpg);">
+			<div class="intro-item" style="background-image: url(<?php echo z_taxonomy_image_url(); ?>);">
 				<div class="caption">
 					<h2><?php echo get_the_category(get_the_ID())[0]->name; ?></h2>
 					<p><?php the_archive_description(); ?></p>
 				</div><!-- caption -->
-				<div class="photocaption">
-					<h4>A shot by <a href="http://vk.com/awaylastdays" target="blank" alt="Vadim Bruklia">Vadim Bruklia</a></h4>
-				</div><!-- photocaption -->
 			</div><!-- intro -->
 		</div><!-- intro -->
 	</div><!-- intro-wrap -->
@@ -48,12 +45,12 @@ get_header(); ?>
 				?>
 				<div class="shuffle-sizer three"></div>
 			</div><!-- grid-items -->
-			<div id="pagination">
-				<ul class="clear-after reset plain">
-					<li id="older" class="pagination-nav"><a href="#" class="button transparent aqua"><i class="fa fa-chevron-left"></i><span class="label">Пред</span></a></li>
-					<li id="newer" class="pagination-nav"><a href="#" class="button transparent aqua"><span class="label">След</span><i class="fa fa-chevron-right"></i></a></li>
-				</ul>
-			</div>
+<!--			<div id="pagination">-->
+<!--				<ul class="clear-after reset plain">-->
+<!--					<li id="older" class="pagination-nav"><a href="#" class="button transparent aqua"><i class="fa fa-chevron-left"></i><span class="label">Пред</span></a></li>-->
+<!--					<li id="newer" class="pagination-nav"><a href="#" class="button transparent aqua"><span class="label">След</span><i class="fa fa-chevron-right"></i></a></li>-->
+<!--				</ul>-->
+<!--			</div>-->
 		</div><!-- row-content -->
 	</div><!-- row -->
 </main><!-- main -->

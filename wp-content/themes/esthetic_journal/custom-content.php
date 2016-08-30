@@ -12,7 +12,7 @@
 
 <?php if (is_single()) : ?>
 	<article role="main" class="column nine">
-		<h5 class="meta-post"><?php the_category(); ?> - <time datetime="<?php the_date(); ?>"><?php the_date(); ?></time></h5>
+		<h5 class="meta-post"><?php the_category(); ?> - <time datetime="<?php the_date(); ?>"><?php setlocale(LC_TIME, "uk_UA.UTF-8"); echo strftime("%d %B, %Y", strtotime(get_the_date())); ?></time></h5>
 		<h1><?php the_title(); ?></h1>
 		<p><?php the_content(); ?></p>
 	</article>

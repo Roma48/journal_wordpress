@@ -276,6 +276,11 @@ function twentyfifteen_scripts() {
 		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
 	) );
+
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', 'https://code.jquery.com/jquery.js', [], '1.8.1');
+	wp_enqueue_script('jquery');
+
 }
 add_action( 'wp_enqueue_scripts', 'twentyfifteen_scripts' );
 

@@ -5191,7 +5191,15 @@ footer .row-content.buffer {
     padding: 5px 1.077em;
 }
 
-.widget_search input[type=submit] {
-    padding: 5px 0;
+.widget_search input[type=submit],
+.screen-reader-text {
+    display: none;
+}
+
+.post-categories {
+    display: inline-block;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
 }
 

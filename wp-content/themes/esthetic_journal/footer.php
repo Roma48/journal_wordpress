@@ -67,6 +67,6 @@
     </div><!-- row -->
 </footer>
 <?php wp_footer(); ?>
-
+<script id="dsq-count-scr" src="//estheticjournal.disqus.com/count.js"></script>
 </body>
 </html>

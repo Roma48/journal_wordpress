@@ -20,50 +20,37 @@ get_header(); ?>
     <div id="intro-wrap">
         <div id="intro" class="preload darken" data-autoplay="5000" data-navigation="true" data-pagination="true"
              data-transition="fadeUp">
-            <div class="intro-item"
-                 style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/767f6861-ffcd-4994-afdf-2a730a9be20f.jpg);">
-                <div class="caption">
-                    <h2>Esthetic</h2>
-                    <p>Творчість у твоєму місті</p>
-                    <a class="button white transparent" href="content.html">Читати</a>
-                </div><!-- caption -->
-<!--                <div class="photocaption">-->
-<!--                    <h4>Фото зробив: <a href="http://vk.com/awaylastdays">Vadim Bruklia</a></h4>-->
-<!--                </div><!-- photocaption -->
-            </div>
-            <div class="intro-item"
-                 style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/vsco_071915.jpg);">
-                <div class="caption">
-                    <h2>Esthetic</h2>
-                    <p>Мы индивидуальны</p>
-                    <a class="button white transparent" href="#">Читать</a>
-                </div><!-- caption -->
-                <div class="photocaption">
-                    <h4>A shot by <a href="http://vk.com/awaylastdays">Vadim Bruklia</a></h4>
-                </div><!-- photocaption -->
-            </div>
-            <div class="intro-item"
-                 style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/1922211_1113433452008380_836589375_n.jpg);">
-                <div class="caption">
-                    <h2>Esthetic</h2>
-                    <p>Мы показываем город своими глазами</p>
-                    <a class="button white transparent" href="#">Читать</a>
-                </div><!-- caption -->
-<!--                <div class="photocaption">-->
-<!--                    <h4>A shot by <a href="http://vk.com/awaylastdays">Vadim Bruklia</a></h4>-->
-<!--                </div><!-- photocaption -->
-            </div>
-            <div class="intro-item"
-                 style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/vsco_080315.jpg);">
-                <div class="caption">
-                    <h2>Esthetic</h2>
-                    <p>Мы креативные</p>
-                    <a class="button white transparent" href="#">Читать</a>
-                </div><!-- caption -->
-<!--                <div class="photocaption">-->
-<!--                    <h4>A shot by <a href="http://vk.com/awaylastdays">Vadim Bruklia</a></h4>-->
-<!--                </div><!-- photocaption -->
-            </div>
+            <?php
+            $args = array(
+                'numberposts' => 3,
+                'offset' => 0,
+                'category' => 0,
+                'orderby' => 'post_date',
+                'order' => 'DESC',
+                'include' => '',
+                'exclude' => '',
+                'meta_key' => '',
+                'meta_value' =>'',
+                'post_type' => 'post',
+                'post_status' => 'draft, publish, future, pending, private',
+                'suppress_filters' => true
+            );
+
+            $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
+
+				foreach ($recent_posts as $post) : ?>
+                    <div class="intro-item"
+                         style="background-image: url(<?php echo get_the_post_thumbnail_url($post['ID'], 'full'); ?>);">
+                        <div class="caption">
+                            <h2><?php echo apply_filters('the_title', get_post_field('post_title', $post['ID'])); ?></h2>
+                            <p><?php echo apply_filters('the_content', get_post_field('post_content', $post['ID'])); ?></p>
+                            <a class="button white transparent" href="<?php echo get_permalink($post['ID']); ?>">Читати</a>
+                        </div><!-- caption -->
+                        <!--                <div class="photocaption">-->
+                        <!--                    <h4>Фото зробив: <a href="http://vk.com/awaylastdays">Vadim Bruklia</a></h4>-->
+                        <!--                </div><!-- photocaption -->
+                    </div>
+				<?php endforeach; ?>
         </div><!-- intro -->
     </div><!-- intro-wrap -->
 
